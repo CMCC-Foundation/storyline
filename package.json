@@ -75,7 +75,8 @@
     "test": "mocha --require @babel/register './test/*-test.js'",
     "stage": "npm run clean && npm run dist && node tasks/stage.js",
     "stage_latest": "npm run clean && npm run dist && node tasks/stage.js latest",
-    "stage_dev": "npm run clean && npm run dist && node tasks/stage.js dev"
+    "stage_dev": "npm run clean && npm run dist && node tasks/stage.js dev",
+    "deploy": "aws s3 sync --delete ./dist s3://files.cmcc.it/js/storyline/"
   },
   "contributors": [
     "Divya Sasidharan <div@northwestern.edu> (https://github.com/shortdiv)",
