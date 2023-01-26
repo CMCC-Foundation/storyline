@@ -306,7 +306,7 @@ const MUSTACHE_TEMPLATES = {
         "<div class='slider-content'>" +
         "<h3><span class='h3-date'>{{ displayDate }}</span>" +
         "{{ slideTitle }}</h3>" +
-        "<p>{{ slideText }}<p>" +
+        "<p>{{{ slideText }}}<p>" +
         "</div>" +
         "</div>" +
         "{{/cards}}" +
