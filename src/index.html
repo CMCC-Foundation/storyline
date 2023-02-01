@@ -42,17 +42,37 @@
 
 <body>
     <div id="storyline" height="568" width="600"></div>
+    <!-- <script type="text/javascript"> -->
+    <!--     var req = new XMLHttpRequest(); -->
+    <!--     req.open("GET", "/assets/data.json", true); -->
+    <!--     req.onload = function() { -->
+    <!--         if (req.status == 200) { -->
+    <!--             window.storyline = new Storyline('storyline', JSON.parse(req.response)); -->
+    <!--         } else { -->
+    <!--             Error(req.statusText) -->
+    <!--         } -->
+    <!--     } -->
+    <!--     req.send() -->
+    <!-- </script> -->
     <script type="text/javascript">
-        var req = new XMLHttpRequest();
-        req.open("GET", "/assets/data.json", true);
-        req.onload = function() {
-            if (req.status == 200) {
-                window.storyline = new Storyline('storyline', JSON.parse(req.response));
-            } else {
-                Error(req.statusText)
-            }
-        }
-        req.send()
+      var config = {
+          "width": 1000,
+          "data": {
+              "url": 'https://files.cmcc.it/ipccitalia/IPCC Report - CO2 Storyline img - Foglio1.csv',
+              "data_column_name": "co2",
+              "datetime_column_name": "year",
+              "datetime_format": "%Y"
+          },
+          "chart": {
+              "datetime_format": "%Y",
+              "y_axis_label": "CO2emission"
+          },
+          "slider": {
+              "title_column_name": "title",
+              "text_column_name": "text"
+          }
+      }
+      window.storyline = new Storyline('storyline', config)
     </script>
 </body>
 
