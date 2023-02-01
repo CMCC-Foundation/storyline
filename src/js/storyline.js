@@ -32,7 +32,7 @@ export class Storyline {
             var self = this;
             this.initTracking();
             this.validateConfig(this.dataConfig);
-            this.setDimensions();
+            this.setDimensions(this.dataConfig.width);
             this.grabData(this.dataConfig).then(function(dataObj) {
                     self.data = dataObj;
                     self.chart = self.initChart(dataObj);
@@ -84,8 +84,9 @@ export class Storyline {
         }
     }
     resetWidth(newWidth, targetType) {
+            let config_width = this.dataConfig.width
             this.trackEvent('resize', targetType)
-            this.width = newWidth;
+            this.width =  (config_width < newWidth) ? config_width : newWidth;
             var oldSlider = this.slider.elem
             var lastActiveCard = this.slider.activeCard;
             var oldChart = this.chart.canvas
@@ -120,7 +121,7 @@ export class Storyline {
          * @returns {undefined}
          */
     setDimensions(width) {
-        this.width = width ? width : window.innerWidth;
+        this.width = (width && width < window.innerWidth) ? width : window.innerWidth;
         this.height = this.elem.getAttribute('height');
         //slider has a max height of 246px so let chart take up the additional space//
         if (0.4 * this.height > 246) {
