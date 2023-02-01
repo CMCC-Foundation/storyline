@@ -72,11 +72,11 @@ export class Storyline {
 
     }
     initTracking() {
-        try {
-            var visitor = ua('UA-27829802-5', { https: true });
-            visitor.pageview({ dl: document.location.href }).send();
-            this.visitor = visitor;
-        } catch (e) { /* we don't want any problem here to sidetrack things */ }
+        // try {
+        //     var visitor = ua('UA-27829802-5', { https: true });
+        //     visitor.pageview({ dl: document.location.href }).send();
+        //     this.visitor = visitor;
+        // } catch (e) { /* we don't want any problem here to sidetrack things */ }
     }
     trackEvent(category, action, label, value) {
         if (this.visitor) {
