@@ -148,7 +148,7 @@ Chart.prototype = {
       connector.setAttribute('y1', marker.y)
       connector.setAttribute('x2', slidertopX)
       connector.setAttribute('y2', slidertopY)
-      connector.setAttribute('stroke', '#FF1744');
+      connector.setAttribute('stroke', this.storyline.dataConfig.activeColor);
       connector.setAttribute('stroke-width', '2px');
       text.innerHTML = marker.label;
       text.setAttribute('x', marker.x + 15);
