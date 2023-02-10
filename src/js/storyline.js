@@ -108,7 +108,8 @@ export class Storyline {
     }
     initSlider(lastActiveCard) {
         var activeCard = !!lastActiveCard ? lastActiveCard : !!this.data.activeCard ? this.data.activeCard : 0
-        var sliderHeight = (0.4 * this.height)
+        // var sliderHeight = (0.4 * this.height)
+        var sliderHeight = null
         return new Slider(this, this.chart.markers, this.data.cards, this.dataConfig, activeCard, sliderHeight, this.width);
     }
     initChart(dataObj) {

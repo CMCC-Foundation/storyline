@@ -46,7 +46,7 @@ export class Slider {
     createSliderView() {
         var sliderView = document.createElement("div");
         sliderView.setAttribute('class', 'slider-view');
-        sliderView.style.height = this.height + "px";
+        if (this.height) sliderView.style.height = this.height + "px";
         sliderView.style.width = this.width + "px";
 
         sliderView.appendChild(this.cardsElem);
