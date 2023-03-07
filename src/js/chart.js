@@ -80,7 +80,7 @@ Chart.prototype = {
       .attr("fill", "rgb(184, 184, 184)")
       .attr("x", this.lineWidth + this.margin.right + this.margin.left)
       .attr("y", -35)
-      .attr("dy", "1.3em")
+      .attr("dy", "1.75em")
       .attr("text-anchor", "end")
       .text(this.axes.yLabel);
   },
