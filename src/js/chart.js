@@ -36,7 +36,7 @@ Chart.prototype = {
       .domain([this.bounds.minX, this.bounds.maxX])
       .range([0, this.lineWidth]);
     var xAxis = d3.axis.axisBottom(x)
-      .tickSize(this.height)
+      .tickSize(this.height+8)
       .tickFormat(d3.time.timeFormat(this.axes.timeFormat))
 
     var y = d3.scale.scaleLinear()
