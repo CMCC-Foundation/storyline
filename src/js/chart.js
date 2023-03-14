@@ -151,8 +151,8 @@ Chart.prototype = {
       connector.setAttribute('stroke', this.storyline.dataConfig.activeColor);
       connector.setAttribute('stroke-width', '2px');
       text.innerHTML = marker.label;
-      text.setAttribute('x', marker.x + 15);
-      text.setAttribute('y', marker.y);
+      text.setAttribute('x', marker.x);
+      text.setAttribute('y', marker.y - 15);
       text.setAttribute('fill', 'grey');
       text.setAttribute('class', 'text-' + marker.markerCount);
       markerElem.setAttribute('class', 'marker-' + marker.markerCount);
